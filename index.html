@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="mymodule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.4.1/angular.min.js"></script>
+    <script src="service.js"></script>
+</head>
+<body>
+    <div ng-controller="myController">
+
+        {{info.name+','+info.job}}
+    </div>
+<script>
+    angular.module('mymodule',['personnal'])
+            .controller('myController',['$scope','person',function($scope,person)
+    {
+        $scope.info=person.info();
+    }
+    ])
+</script>
+</body>
+</html>
